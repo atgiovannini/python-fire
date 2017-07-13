@@ -95,6 +95,8 @@ def Fire(component=None, command=None, name=None):
     to call or class left to instantiate, the resulting current component is
     the final result.
   Raises:
+    ValueError: If the command argument is supplied, but not a string or a
+        sequence of arguments.
     FireExit: When Fire encounters a FireError, Fire will raise a FireExit with
         code 2. When used with the help or trace flags, Fire will raise a
         FireExit with code 0 if successful.
@@ -110,7 +112,8 @@ def Fire(component=None, command=None, name=None):
     # Use the command line args by default if no command is specified.
     args = sys.argv[1:]
   else:
-    raise ValueError()
+    raise ValueError('The command argument must be a string or a sequence of '
+                     'arguments.')
 
   # Determine the calling context.
   caller = inspect.stack()[1]
