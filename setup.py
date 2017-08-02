@@ -41,7 +41,7 @@ TEST_DEPENDENCIES = [
 
 setup(
     name='fire',
-    version='0.1.1',
+    version='0.1.1a1',
 
     description=SHORT_DESCRIPTION,
     long_description=LONG_DESCRIPTION,
